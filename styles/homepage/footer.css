@@ -1,0 +1,125 @@
+.footer .wrap-footer {
+    align-items: flex-start ;
+}
+.footer .left,
+.footer .right {
+    width: calc(50% - 30px);
+}
+.footer .email,
+.footer .contact {
+    height: 180px;
+}
+.footer h2 {
+    font-size: 32px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--primary-color);
+    padding: 20px 0;    
+}
+.footer h4 {
+    font-size: 24px;
+    font-weight: 400;
+    color: #212427;
+    padding: 10px 10px 10px 0;
+}
+.footer .timer {
+    display: flex;
+    align-items: flex-start;
+}
+.icon {
+    padding-right: 20px;
+}
+.large-icon {
+    font-size: 40px;
+    padding-right: 40px;
+}
+.footer .right .connect i {
+    transition: all 0.3s linear;
+    cursor: pointer;
+}
+.footer .right .connect i:hover {
+    color: var(--primary-color);
+}
+.footer span {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+.footer form {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+.footer .email input {
+    padding: 15px 60px 15px 20px;
+    font-family: "Poppins", sans-serif;
+    display: block;
+    width: 100%;
+    font-size: 18px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    outline-color:var(--primary-color);
+}
+
+/* RESPONSIVE */
+@media screen and (max-width: 1280px) {
+    .footer h2 {
+        font-size: 30px;    
+    }
+    .footer h4 {
+        font-size: 20px;
+    }
+}
+@media screen and (max-width: 1024px) {
+    .footer .left,
+    .footer .right {
+        width: calc(50% - 20px);
+    }
+    .footer .email,
+    .footer .contact {
+        height: 140px;
+    }   
+    .footer h2 {
+        font-size: 24px;    
+    }
+    .footer h4 {
+        font-size: 16px;
+    }
+    .footer .email input {
+        padding: 10px 50px 10px 15px;
+        font-size: 15px;
+    }
+    .large-icon {
+        font-size: 28px;
+    }
+}
+@media screen and (max-width: 820px) {
+    .footer .wrap-footer {
+        flex-direction: column;
+        padding: 20px 40px;
+    }
+    .footer .email,
+    .footer .contact {
+        height: auto;
+    }
+    .footer .email,
+    .footer .connect,
+    .footer .contact,
+    .footer .visit,
+    .footer .left,
+    .footer .right {
+        width: 100%;
+    }
+    .footer {
+        padding: 15px 0;
+    }
+}
+@media screen and (max-width: 480px) {
+    .footer .wrap-footer {
+        padding: 0 20px;
+    }
+    .footer h2 {
+        padding: 10px 0;
+        line-height: 1.4;
+    }
+}

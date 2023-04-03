@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- For ICON -->
+    <link rel="icon" href="/assets/homepage/logo.png">
+    <!-- LINK CSS -->
+    <link rel="stylesheet" href="/styles/homepage/header.css">
+    <link rel="stylesheet" href="/styles/homepage/footer.css">
+    <link rel="stylesheet" href="/styles/reset/reset.css">
+    <link rel="stylesheet" href="/styles/reset/general.css">
+    <link rel="stylesheet" href="/styles/userInfo/style.css">
+    <!-- For ICON -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <!-- For FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet">
+    <title>User Info</title>
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="wrapper">
+            <div class="header-top flexbox">
+                <a href="/frontend/homepage/index.html" class="logo">
+                    <img src="/assets/homepage/logo.png" alt="">
+                    <div class="logo-text">
+                        <h2 class="logo-bk">BK</h2>
+                        <h4 class="logo-small">Furniture</h4>
+                    </div>
+                </a>
+                <div class="searchbox flexbox">
+                    <div class="searchbox-form">
+                        <form action="" class="search flexcol">
+                            <span class="icon-small"><i class="ri-search-line"></i></span>
+                            <input type="search" placeholder="Search for products, brands, ...">
+                            <button type="submit">Search</button>
+                        </form>
+                    </div>
+                    <div class="searchbox-icon">
+                        <i class="ri-user-line icon-large searchbox-item"></i>
+                        <i class="ri-shopping-cart-line icon-large searchbox-item"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="header-bottom">
+                <a href="#" class="trigger"><i class="ri-menu-line icon-large"></i></a>
+                <div class="header-menu">
+                    <ul class="menu-list flexcenter">
+                        <li><a href="#" class="current"><i class="ri-home-line icon-small"></i> Home</a></li>
+                        <li><a href="#">living room</a></li>
+                        <li><a href="#">dining room</a></li>
+                        <li><a href="#">bath room</a></li>
+                        <li><a href="#">bedroom</a></li>
+                        <li><a href="#">custom design</a></li>
+                        <li class="on-mobile"><a href="#">your information</a></li>
+                        <a href="#" class="close"><i class="ri-close-line"></i></a>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="user-info">
+        <div class="wrapper">
+            <h2 class="page-title">Account Setting</h2>
+            <div class="avatar">
+                <a data-fslightbox href="/assets/userInfo/avt.webp"><img src="/assets/userInfo/avt.webp" alt="" class="object-cover"></a>
+                <button class="changeAvt">Change Avatar</button>
+            </div>
+            <div class="info">
+                <div class="name info-item">
+                    <div class="user-label flexcenter">
+                        <i class="ri-contacts-book-fill info-icon"></i>
+                        <span>Name</span>
+                    </div>
+                    <input type="text" placeholder="Nguyễn Hải Đăng">
+                </div>
+                <div class="mail info-item">
+                    <div class="user-label flexcenter">
+                        <i class="ri-mail-send-fill info-icon"></i>
+                        <span>Email</span>
+                    </div>
+                    <input type="email" placeholder="dangngngng@gmail.com">
+                </div>
+                <div class="phone info-item">
+                    <div class="user-label flexcenter">
+                        <i class="ri-phone-fill info-icon"></i>
+                        <span>Phone Number</span>
+                    </div>
+                    <input type="text" placeholder="0123456789">
+                </div>
+                <div class="change info-item">
+                    <div class="user-label flexcenter">
+                        <i class="ri-lock-password-fill info-icon"></i>
+                        <a href="#">Change Password</a>
+                    </div>
+                </div>
+            </div>
+            <div class="logout info-item">
+                <div class="flexcenter">
+                    <i class="ri-logout-box-fill info-icon"></i>
+                    <a href="#">Log Out</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="wrapper wrap-footer flexrow">
+            <div class="left">
+                <div class="contact">
+                    <h2>Contact us</h2>
+                    <h4><i class="ri-phone-line icon-small icon"></i> 0123456789</h4>
+                    <h4><i class="ri-mail-line icon-small icon"></i> bkfurniture@gmail.com</h4>
+                </div>
+                <div class="visit">
+                    <h2>Visit our store</h2>
+                    <h4><i class="ri-map-pin-line icon-small icon"></i>246 Ly Thuong Kiet, Quan 10, Ho Chi Minh City, Viet Nam</h4>
+                    <h4 class="timer">
+                        <i class="ri-time-line icon-small icon"></i>
+                        <div class="time">
+                            <span>Mon-Fri: 10am to 6pm</span>
+                            <span>Sat-Sun: 11am to 5pm</span>
+                        </div>
+                    </h4>
+                </div>
+            </div>
+            <div class="right">
+                <div class="email">
+                    <h2>FILL EMAIL FOR DEALS OR YOUR DESIGN</h2>
+                    <form action="" class="enterEmail">
+                        <input type="email" placeholder="Email Address">
+                    </form>
+                </div>
+                <div class="connect">
+                    <h2>Connect with us</h2>
+                    <i class="ri-facebook-circle-fill icon large-icon"></i>
+                    <i class="ri-instagram-line icon large-icon"></i>
+                    <i class="ri-twitter-fill icon large-icon"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fslightbox/3.4.1/index.js"></script>
+</body>
+</html>
