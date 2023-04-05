@@ -7,12 +7,13 @@
     <!-- For ICON -->
     <link rel="icon" href="/assets/homepage/logo.png">
     <!-- LINK CSS -->
-    <link rel="stylesheet" href="/styles/homepage/header.css">
-    <link rel="stylesheet" href="/styles/homepage/content.css">
-    <link rel="stylesheet" href="/styles/homepage/products.css">
-    <link rel="stylesheet" href="/styles/homepage/footer.css">
-    <link rel="stylesheet" href="/styles/reset/reset.css">
-    <link rel="stylesheet" href="/styles/reset/general.css">
+    <link rel="stylesheet" href="/styles/homepage/assignment/header.css">
+    <link rel="stylesheet" href="/styles/homepage/assignment/content.css">
+    <link rel="stylesheet" href="/styles/homepage/assignment/products.css">
+    <link rel="stylesheet" href="/styles/productCart/assignment/productCart.css">
+    <link rel="stylesheet" href="/styles/homepage/assignment/footer.css">
+    <link rel="stylesheet" href="/styles/reset/assignment/reset.css">
+    <link rel="stylesheet" href="/styles/reset/assignment/general.css">
     <!-- For SLIDER -->
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     <!-- For ICON -->
@@ -28,7 +29,7 @@
     <header class="header">
         <div class="wrapper">
             <div class="header-top flexbox">
-                <a href="/frontend/homepage/index.html" class="logo">
+                <a href="/frontend/index.html" class="logo">
                     <img src="/assets/homepage/logo.png" alt="">
                     <div class="logo-text">
                         <h2 class="logo-bk">BK</h2>
@@ -44,8 +45,11 @@
                         </form>
                     </div>
                     <div class="searchbox-icon">
-                        <a href="/frontend/userInfo/index.html"><i class="ri-user-line icon-large searchbox-item"></i></a>
-                        <a href=""><i class="ri-shopping-cart-line icon-large searchbox-item"></i></a>
+                        <a href="/frontend/userInfo/assignment/userInf.html"><i class="ri-user-line icon-large searchbox-item"></i></a>
+                        <div class="cart-wrapper">
+                            <a href="#" class="cart-button"><i class="ri-shopping-cart-line icon-large searchbox-item"></i></a>
+                            <span class="qt">0</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -80,7 +84,7 @@
                         <div class="text-content">
                             <h4>Decorate Your House</h4>
                             <h2><span>Come and Get it!</span><br><span>Brands New Shoes</span></h2>
-                            <a href="#" class="primary-button">shop now</a>
+                            <a href="#trending" class="primary-button">shop now</a>
                         </div>
                     </div>
                     <div class="swiper-slide">
@@ -90,7 +94,7 @@
                         <div class="text-content">
                             <h4>Decorate Your House</h4>
                             <h2><span>Come and Get it!</span><br><span>Brands New Shoes</span></h2>
-                            <a href="#" class="primary-button">shop now</a>
+                            <a href="#trending" class="primary-button">shop now</a>
                         </div>
                     </div>
                     <div class="swiper-slide">
@@ -100,7 +104,7 @@
                         <div class="text-content">
                             <h4>Decorate Your House</h4>
                             <h2><span>Come and Get it!</span><br><span>Brands New Shoes</span></h2>
-                            <a href="#" class="primary-button">shop now</a>
+                            <a href="#trending" class="primary-button">shop now</a>
                         </div>
                     </div>
                     <div class="swiper-slide">
@@ -110,25 +114,61 @@
                         <div class="text-content">
                             <h4>Decorate Your House</h4>
                             <h2><span>Come and Get it!</span><br><span>Brands New Shoes</span></h2>
-                            <a href="#" class="primary-button">shop now</a>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="image">
-                            <img src="/assets/homepage/slider/slider4.jpg" alt="" class="object-cover">
-                        </div>
-                        <div class="text-content">
-                            <h4>Decorate Your House</h4>
-                            <h2><span>Come and Get it!</span><br><span>Make your house perfectly</span></h2>
-                            <a href="#" class="primary-button">shop now</a>
+                            <a href="#trending" class="primary-button">shop now</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
+        <!-- product cart -->
+        <div class="product-cart">
+            <h2 class="title">
+                Your Cart
+                <button class="close-menu"><i class="ri-close-fill"></i></button>
+            </h2>
+            <div class="products">
+                <form action="" class="form-cart">
+                    <div class="item">
+                        <table class="cart-table">
+                            <thead>
+                                <tr>
+                                    <th>Item</th>
+                                    <th>Price</th>
+                                    <th>Quantity</th>
+                                    <th>Subtotal</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                            </tbody>
+                        </table>
+                        <div class="total-price">
+                            <div class="cost-item">
+                                <span>Price: </span>
+                                <span class="item-cost"></span>
+                            </div>
+                            <div class="cost-item">
+                                <span>Shipping: </span>
+                                <span class="ship-cost"></span>
+                            </div>
+                            <div class="cost-item">
+                                <span>Discount: </span>
+                                <span class="sale-cost"></span>
+                            </div>
+                            <div class="cost-item">
+                                <span>Total cost: </span>
+                                <span class="total-cost"></span>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        
         <!-- treding product -->
-        <div class="trending">
+        <div class="trending" id="trending">
             <div class="container">
                 <div class="all-products">
                     <div class="product-title">
@@ -296,9 +336,9 @@
                 </div>
                 <div class="connect">
                     <h2>Connect with us</h2>
-                    <i class="ri-facebook-circle-fill icon large-icon"></i>
-                    <i class="ri-instagram-line icon large-icon"></i>
-                    <i class="ri-twitter-fill icon large-icon"></i>
+                    <a href="https://www.facebook.com/"><i class="ri-facebook-circle-fill icon large-icon"></i></a>
+                    <a href="https://www.instagram.com/"><i class="ri-instagram-line icon large-icon"></i></a>
+                    <a href="https://twitter.com/?lang=vi"><i class="ri-twitter-fill icon large-icon"></i></a>
                 </div>
             </div>
         </div>
@@ -307,6 +347,7 @@
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-    <script src="/scripts/homepage/script.js"></script>
+    <script src="/scripts/homepage/assignment/homepage.js"></script>
+    <script src="/scripts/general/assignment/general.js"></script>
 </body>
 </html>

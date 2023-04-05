@@ -1,14 +1,14 @@
-.user-info {
+.main {
     background-color: #eee;
     padding-bottom: 40px;
 }
-.user-info .page-title {
+.main .page-title {
     padding: 20px;
     font-size: 36px;
     font-weight: 700;
     color: var(--primary-color);
 }
-.user-info .avatar {
+.main .avatar {
     width: 250px;
     height: 250px;
     margin: 0 auto;
@@ -18,10 +18,10 @@
     overflow: hidden;
     margin-bottom: 50px;
 }
-.user-info .avatar img {
+.main .avatar img {
     border-radius: 50%;
 }
-.user-info .avatar button {
+.main .avatar button {
     font-weight: 700;
     font-size: 16px;
     border:0;
@@ -38,37 +38,37 @@
     background-color: rgba(94, 93, 93, 0.444);
     transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
-.user-info .avatar:hover button {
+.main .avatar:hover button {
     opacity: 0.8;
     visibility: visible;
 }
-.user-info .info {
+.main .info {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     max-width: 450px;
     margin: 0 auto;
 }
-.user-info .info-item {
+.main .info-item {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 30px;
 }
-.user-info .user-label,
-.user-info .user-label a  {
+.main .user-label,
+.main .user-label a  {
     font-size: 20px;
     font-weight: 600;
     color: var(--primary-color);
 }
-.user-info .user-label span,
-.user-info .user-label a {
+.main .user-label span,
+.main .user-label a {
     width: 160px;
 }
-.user-info .info-icon {
+.main .info-icon {
     padding-right: 30px;
 }
-.user-info .info-item input {
+.main .info-item input {
     padding: 10px 60px 10px 15px;
     font-family: "Poppins", sans-serif;
     display: block;
@@ -77,27 +77,27 @@
     min-width: 320px;
     outline-color: var(--primary-color);
 }
-.user-info .logout{
+.main .logout{
     width: 150px;
     margin-left: auto;
     font-size: 24px;
     font-weight: 600;
 }
-.user-info .logout i,
-.user-info .logout a {
+.main .logout i,
+.main .logout a {
     color: red;
 }
 
 /* RESPONSIVE */
 @media screen and (max-width: 1024px) {
-    .user-info .page-title {
+    .main .page-title {
         font-size: 32px;
     }
-    .user-info .avatar {
+    .main .avatar {
         width: 220px;
         height: 220px;
     }
-    .user-info .logout {
+    .main .logout {
         font-size: 22px
     }
 }
@@ -105,20 +105,20 @@
     .wrapper {
         padding: 10px 25px;
     }
-    .user-info {
+    .main {
         padding-bottom: 20px;
     }
-    .user-info .avatar {
+    .main .avatar {
         margin-bottom: 30px;
     }
-    .user-info .info-item {
+    .main .info-item {
         flex-direction: column;
         align-items: flex-start;
     }
-    .user-info .user-label {
+    .main .user-label {
         margin-bottom: 15px;
     }
-    .user-info .page-title {
+    .main .page-title {
         font-size: 24px;
         padding: 20px 0;
     }

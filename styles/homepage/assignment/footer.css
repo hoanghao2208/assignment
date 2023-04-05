@@ -33,6 +33,9 @@
     font-size: 40px;
     padding-right: 40px;
 }
+.footer .right .connect a {
+    color: #212427;
+}
 .footer .right .connect i {
     transition: all 0.3s linear;
     cursor: pointer;

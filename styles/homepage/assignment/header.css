@@ -138,6 +138,32 @@ form.search button:hover {
 .on-mobile {
     display: none;
 }
+
+.searchbox-icon {
+    display: flex;
+}
+.cart-wrapper {
+    position:relative;
+}
+.searchbox-icon i:hover {
+    color: #999;
+} 
+.cart-wrapper span {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    display: inline-block;
+    padding: 2px 4px;
+    border-radius: 5px;
+    font-size: 16px;
+    color: white;
+    background-color: red;
+}
+
+
+
+
+
 /* RESPONSIVE */
 @media screen and (max-width: 1024px) {
     .header .logo img,
@@ -208,8 +234,16 @@ form.search button:hover {
     .on-mobile {
         display: block;
     }
-    .header-top .searchbox-item:first-child {
-        display: none
+    .searchbox-form {
+        width: 100%;
+    }
+    .searchbox-icon > a {
+        display: none;
+    }
+    .searchbox-icon {
+        position: absolute;
+        top: 35px;
+        right: 35px;
     }
     .header-bottom .trigger {
         display: inline-block;

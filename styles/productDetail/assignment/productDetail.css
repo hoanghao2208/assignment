@@ -129,12 +129,6 @@ main {
     text-decoration: line-through;
 }
 
-/* COLOR */
-.detail-product .color {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 20px;
-}
 .detail-product .title {
     font-family: 'Montserrat', sans-serif;
     font-size: 24px;
@@ -142,61 +136,6 @@ main {
     color: var(--primary-color);
     margin-right: 30px;
     margin-bottom: 10px;
-}
-.detail-product .variant form {
-    display: flex;
-    margin-top: 5px;
-}
-.detail-product .variant form p {
-    position: relative;
-    margin: 0 10px 10px;
-}
-.detail-product .variant .square {
-    width: 38px;
-    height: 38px;
-    border-radius: 10px;
-    background-color: #bfc9d7;
-    display: block;
-    cursor: pointer;
-}
-.detail-product .variant .square::before {
-    content: "";
-    width: 28px;
-    height: 28px;
-    border-radius: 10px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-.detail-product .variant input {
-    clip: rect(0,0,0,0);
-    overflow: hidden;
-    position: absolute;
-    height: 0;
-    width: 0;
-}
-.detail-product .variant label[for="cogrey"]::before {
-    background-color: #576574;
-}
-.detail-product .variant label[for="coblue"]::before {
-    background-color: #45a0ff;
-}
-.detail-product .variant label[for="cogreen"]::before {
-    background-color: #1dd1a1;
-}
-.detail-product .variant label[for="colight"]::before {
-    background-color: #ffffff;
-}
-.detail-product .variant label[for="coyellow"]::before {
-    background-color: yellow;
-}
-.detail-product .variant label[for="coviolet"]::before {
-    background-color: violet;
-}
-.detail-product .variant form p input:checked + label {
-    border: 2px solid black;
-    color: white;
 }
 
 /* QUANTITY */
@@ -429,21 +368,6 @@ main {
     font-size: 14px;
 }
 
-.detail-product .review-block-body .view a.view-all {
-    font-size: 16px;
-    text-transform: none;
-    font-weight: 300;
-    color: #333;
-    border-top: 0;
-    display: flex;
-    justify-content: end;
-    font-family: "Poppins", sans-serif;
-    transition: all 0.2s linear;
-    margin: 0;
-}
-.detail-product .review-block-body .view a.view-all:hover {
-    color: #999;
-}
 
 /* REVIEW FORM */
 .detail-product .review-form .rating {
@@ -490,6 +414,7 @@ main {
     font-size: 16px;
     resize: none;
     border-radius: 10px;
+    font-family: 'Montserrat', sans-serif;
 }
 .detail-product .review-form form label {
     font-weight: 600;
@@ -497,14 +422,13 @@ main {
     text-transform: uppercase;
 }
 .detail-product .review-form form .submit-button {
-    border-top: 0;
-    margin: 0;
-    padding: 0;
-    width: fit-content;
     text-transform: none;
     font-weight: 400;
     font-size: 18px;
-    padding: 10px 20px;
+    padding: 15px 0;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
     background-color: #ff6b6b;
     border-radius: 10px;
     color: white;
@@ -524,6 +448,7 @@ main {
     }
     .detail-product .review-form form .submit-button {
         margin: 0 auto;
+        width: 100%;
     }
 }
 @media screen and (max-width: 468px) {
@@ -568,5 +493,6 @@ main {
     }
     .detail-product .review-form form .submit-button {
         font-size: 15px;
+        width: 100%;
     }
 }
