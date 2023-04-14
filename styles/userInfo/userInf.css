@@ -1,0 +1,125 @@
+.main {
+    background-color: #eee;
+    padding-bottom: 40px;
+}
+.main .page-title {
+    padding: 20px;
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+.main .avatar {
+    width: 250px;
+    height: 250px;
+    margin: 0 auto;
+    cursor: pointer;
+    position: relative;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 50px;
+}
+.main .avatar img {
+    border-radius: 50%;
+}
+.main .avatar button {
+    font-weight: 700;
+    font-size: 16px;
+    border:0;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    visibility: hidden;
+    color: white;
+    cursor: pointer;
+    height: 50px;
+    width: 100%;
+    background-color: rgba(94, 93, 93, 0.444);
+    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.main .avatar:hover button {
+    opacity: 0.8;
+    visibility: visible;
+}
+.main .info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 450px;
+    margin: 0 auto;
+}
+.main .info-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+.main .user-label,
+.main .user-label a  {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+.main .user-label span,
+.main .user-label a {
+    width: 160px;
+}
+.main .info-icon {
+    padding-right: 30px;
+}
+.main .info-item input {
+    padding: 10px 60px 10px 15px;
+    font-family: "Poppins", sans-serif;
+    display: block;
+    border: 1px solid #b1afaf;
+    border-radius: 8px;
+    min-width: 320px;
+    outline-color: var(--primary-color);
+}
+.main .logout{
+    width: 150px;
+    margin-left: auto;
+    font-size: 24px;
+    font-weight: 600;
+}
+.main .logout i,
+.main .logout a {
+    color: red;
+}
+
+/* RESPONSIVE */
+@media screen and (max-width: 1024px) {
+    .main .page-title {
+        font-size: 32px;
+    }
+    .main .avatar {
+        width: 220px;
+        height: 220px;
+    }
+    .main .logout {
+        font-size: 22px
+    }
+}
+@media screen and (max-width: 600px) {
+    .wrapper {
+        padding: 10px 25px;
+    }
+    .main {
+        padding-bottom: 20px;
+    }
+    .main .avatar {
+        margin-bottom: 30px;
+    }
+    .main .info-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .main .user-label {
+        margin-bottom: 15px;
+    }
+    .main .page-title {
+        font-size: 24px;
+        padding: 20px 0;
+    }
+}

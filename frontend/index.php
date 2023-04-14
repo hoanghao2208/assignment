@@ -5,15 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- For ICON -->
-    <link rel="icon" href="/assets/homepage/logo.png">
+    <link rel="icon" href="/assignment/assets/homepage/logo.png">
     <!-- LINK CSS -->
-    <link rel="stylesheet" href="/styles/homepage/assignment/header.css">
-    <link rel="stylesheet" href="/styles/homepage/assignment/content.css">
-    <link rel="stylesheet" href="/styles/homepage/assignment/products.css">
-    <link rel="stylesheet" href="/styles/productCart/assignment/productCart.css">
-    <link rel="stylesheet" href="/styles/homepage/assignment/footer.css">
-    <link rel="stylesheet" href="/styles/reset/assignment/reset.css">
-    <link rel="stylesheet" href="/styles/reset/assignment/general.css">
+    <link rel="stylesheet" href="/assignment/styles/homepage/header.css">
+    <link rel="stylesheet" href="/assignment/styles/homepage/content.css">
+    <link rel="stylesheet" href="/assignment/styles/homepage/products.css">
+    <link rel="stylesheet" href="/assignment/styles/homepage/footer.css">
+    <link rel="stylesheet" href="/assignment/styles/reset/reset.css">
+    <link rel="stylesheet" href="/assignment/styles/reset/general.css">
     <!-- For SLIDER -->
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     <!-- For ICON -->
@@ -30,7 +29,7 @@
         <div class="wrapper">
             <div class="header-top flexbox">
                 <a href="/frontend/index.html" class="logo">
-                    <img src="/assets/homepage/logo.png" alt="">
+                    <img src="/assignment/assets/homepage/logo.png" alt="">
                     <div class="logo-text">
                         <h2 class="logo-bk">BK</h2>
                         <h4 class="logo-small">Furniture</h4>
@@ -77,9 +76,18 @@
         <div class="slider">
             <div class="swiper">
                 <div class="swiper-wrapper">
+                    <?php
+                        include '../backend/connect.php';
+                        $a=1;
+                        $stmt = $conn->prepare("SELECT * FROM category");
+                        $stmt->execute();
+                        $categories = $stmt->fetchAll();
+                        foreach($categories as $category)
+                        {
+                    ?>
                     <div class="swiper-slide">
                         <div class="image">
-                            <img src="/assets/homepage/slider/slider0.jpg" alt="" class="object-cover">
+                            <img src="<?php echo $category['CategoryImg']; ?>" alt="" class="object-cover">
                         </div>
                         <div class="text-content">
                             <h4>Decorate Your House</h4>
@@ -87,41 +95,14 @@
                             <a href="#trending" class="primary-button">shop now</a>
                         </div>
                     </div>
-                    <div class="swiper-slide">
-                        <div class="image">
-                            <img src="/assets/homepage/slider/slider1.jpg" alt="" class="object-cover">
-                        </div>
-                        <div class="text-content">
-                            <h4>Decorate Your House</h4>
-                            <h2><span>Come and Get it!</span><br><span>Brands New Shoes</span></h2>
-                            <a href="#trending" class="primary-button">shop now</a>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="image">
-                            <img src="/assets/homepage/slider/slider2.jpg" alt="" class="object-cover">
-                        </div>
-                        <div class="text-content">
-                            <h4>Decorate Your House</h4>
-                            <h2><span>Come and Get it!</span><br><span>Brands New Shoes</span></h2>
-                            <a href="#trending" class="primary-button">shop now</a>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="image">
-                            <img src="/assets/homepage/slider/slider3.jpg" alt="" class="object-cover">
-                        </div>
-                        <div class="text-content">
-                            <h4>Decorate Your House</h4>
-                            <h2><span>Come and Get it!</span><br><span>Brands New Shoes</span></h2>
-                            <a href="#trending" class="primary-button">shop now</a>
-                        </div>
-                    </div>
+                    <?php
+                    }
+                    ?>
                 </div>
             </div>
         </div>
 
-        <!-- product cart -->
+        <!-- cart -->
         <div class="product-cart">
             <h2 class="title">
                 Your Cart
@@ -165,7 +146,7 @@
                     </div>
                 </form>
             </div>
-        </div>
+        </div>     
         
         <!-- treding product -->
         <div class="trending" id="trending">
@@ -177,6 +158,16 @@
                     <div class="column">
                         <div class="flexwrap">
                             <div class="product big best-seller">
+                                <?php
+                                    include '../backend/connect.php';
+                                    $a=1;
+                                    $stmt = $conn->prepare(
+                                            "SELECT * FROM productinfo");
+                                    $stmt->execute();
+                                    $productinfos = $stmt->fetchAll();
+                                    foreach(array_slice($productinfos, 12, 13) as $productinfo)
+                                    {
+                                ?>
                                 <div class="product-item">
                                     <div class="best-title">
                                         <h2>Best Seller <i class="ri-fire-line"></i></h2>
@@ -184,7 +175,7 @@
                                     <div class="media">
                                         <div class="image">
                                             <a href="#">
-                                                <img src="/assets/homepage/products/best-seller.jpg" alt="">
+                                                <img src="<?php echo $productinfo['ProImg']; ?>" alt="">
                                             </a>
                                         </div>
                                         <div class="hoverable">
@@ -195,18 +186,18 @@
                                             </ul>
                                         </div>
                                         <div class="discount flexcenter">
-                                            <span>31%</span>
+                                            <span><?php echo round(((float)$productinfo['OriginPrice'] - (float)$productinfo['PriceDiscount'])/(float)$productinfo['OriginPrice']*100) . "%"; ?></span>
                                         </div>
                                     </div>
                                     <div class="product-content">
                                         <div class="rating">
                                             <div class="stars"></div>
-                                            <span>(2,548)</span>
+                                            <span>(3548)</span>
                                         </div>
-                                        <h3 class="main-links"><a href="#">Television</a></h3>
+                                        <h3 class="main-links"><a href="#"><?php echo $productinfo['ProName']; ?></a></h3>
                                         <div class="price">
-                                            <span class="current">$359.99</span>
-                                            <span class="normal">$400.00</span>
+                                            <span class="current">$<?php echo $productinfo['OriginPrice']; ?></span>
+                                            <span class="normal">$<?php echo $productinfo['PriceDiscount']; ?></span>
                                         </div>
                                         <div class="stock">
                                             <div class="qty">
@@ -219,14 +210,27 @@
                                         </div>
                                     </div>
                                 </div>
+                                <?php
+                                    break;
+                                    }
+                                ?>
                             </div>
-
                             <div class="product mini">
+                            <?php
+                                include '../backend/connect.php';
+                                $a=1;
+                                $stmt = $conn->prepare(
+                                        "SELECT * FROM productinfo");
+                                $stmt->execute();
+                                $productinfos = $stmt->fetchAll();
+                                foreach(array_slice($productinfos, 40) as $productinfo)
+                                {
+                            ?>
                                 <div class="item">
                                     <div class="media">
                                         <div class="thumnail">
                                             <a href="#">
-                                                <img src="/assets/homepage/products/product1.jpg" alt="">
+                                                <img src="<?php echo $productinfo['ProImg']; ?>" alt="">
                                             </a>
                                         </div>
                                         <div class="hoverable">
@@ -237,24 +241,28 @@
                                             </ul>
                                         </div>
                                         <div class="discount flexcenter">
-                                            <span>31%</span>
+                                            <span><?php echo round(((float)$productinfo['OriginPrice'] - (float)$productinfo['PriceDiscount'])/(float)$productinfo['OriginPrice']*100) . "%"; ?></span>
                                         </div>
                                     </div>
                                     <div class="product-content">
-                                        <h3 class="main-links"><a href="#">Black Women's Coat Dress</a></h3>
+                                        <h3 class="main-links"><a href="#"><?php echo $productinfo['ProName']; ?></a></h3>
                                         <div class="rating">
                                             <div class="stars"></div>
-                                            <span>(2,548)</span>
+                                            <span><?php echo "(" .rand(100,3000) . ")"; ?></span>
                                         </div>
                                         <span class="free-ship">Free Ship</span>
                                         <div class="price">
-                                            <span class="current">$359.99</span>
-                                            <span class="normal">$400.00</span>
+                                            <span class="current">$<?php echo $productinfo['OriginPrice']; ?></span>
+                                            <span class="normal">$<?php echo $productinfo['PriceDiscount']; ?></span>
                                         </div>
                                     </div>
                                 </div>
+                            <?php
+                                }
+                            ?>
                             </div>
                         </div>
+                        
                     </div>
                 </div>
             </div>
@@ -270,11 +278,21 @@
                 </div>
 
                 <div class="product main flexwrap">
+                    <?php
+                        include '../backend/connect.php';
+                        $a=1;
+                        $stmt = $conn->prepare(
+                                "SELECT * FROM productinfo");
+                        $stmt->execute();
+                        $productinfos = $stmt->fetchAll();
+                        foreach(array_slice($productinfos, 0, 12) as $productinfo)
+                        {
+                    ?>
                     <div class="item">
                         <div class="media">
                             <div class="thumbnail object-cover">
-                                <a href="#">
-                                    <img src="/assets/homepage/featured/f6.jpg" alt="">
+                                <a href="productDetail/assignment/productDetail.php?id=<?php echo $productinfo['ProID'];?>">
+                                    <img src=" <?php echo $productinfo['ProImg']; ?>" alt="">
                                 </a>
                             </div>
                             <div class="hoverable">
@@ -285,22 +303,25 @@
                                 </ul>
                             </div>
                             <div class="discount flexcenter">
-                                <span>31%</span>
+                                <span><?php echo round(((float)$productinfo['OriginPrice'] - (float)$productinfo['PriceDiscount'])/(float)$productinfo['OriginPrice']*100) . "%"; ?></span>
                             </div>
                         </div>
                         <div class="product-content">
                             <div class="rating">
                                 <div class="stars"></div>
-                                <span>(2,548)</span>
+                                <span><?php echo "(" .rand(100,3000) . ")"; ?></span>
                             </div>
-                            <h3 class="main-links"><a href="#">Black Women's Coat Dress</a></h3>
+                            <h3 class="main-links"><a href="#"><?php echo $productinfo['ProName']; ?></a></h3>
                             <span class="free-ship">Top Sell Of Week</span>
                             <div class="price">
-                                <span class="current">$359.99</span>
-                                <span class="normal">$400.00</span>
+                                <span class="current">$<?php echo $productinfo['OriginPrice']; ?></span>
+                                <span class="normal">$<?php echo $productinfo['PriceDiscount']; ?></span>
                             </div>
                         </div>
                     </div>
+                    <?php
+                    }
+                    ?>
                 </div>
             </div>
         </div>
@@ -347,7 +368,8 @@
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-    <script src="/scripts/homepage/assignment/homepage.js"></script>
-    <script src="/scripts/general/assignment/general.js"></script>
+    <script src="/assignment/scripts/homepage/homepage.js"></script>
+    <script src="/assignment/scripts/cart/cart.js"></script>
+    <script src="/assignment/scripts/general/general.js"></script>
 </body>
 </html>

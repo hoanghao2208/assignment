@@ -1,0 +1,161 @@
+.product-cart {
+    position: fixed;
+    max-width: 1000px;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    right:0;
+    top: 0;
+    background-color: #e5e8ec;
+    z-index: 1000;
+    transform: translateX(100%);
+    transition: all 0.2s ease-in-out;
+}
+.product-cart.active {
+    transform: translateX(0);
+}
+.product-cart .title {
+    padding: 20px;
+    font-size: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #0e5790;
+}
+.product-cart .close-menu {
+    border:0;
+    outline:0;
+    padding: 5px;
+    background-color: inherit;
+    font-size: 30px;
+    cursor: pointer;
+    transition: all 0.2s linear;
+}
+.product-cart .close-menu:hover{
+    opacity: 0.4;
+}
+.product-cart .products {
+    padding-bottom: 100px;
+}
+.product-cart .products table {
+    width: 90%;
+    margin: 0 auto;
+}
+.product-cart .image-product {
+    width: 100px;
+    height: 100px;
+    flex-shrink: 0;
+    margin-right: 10px;
+}
+.product-cart .image-product img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.product-cart table thead th {
+    vertical-align: middle;
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 20px;
+}
+.product-cart table :where(th, td) {
+    padding: 25px 15px;
+    text-align: center;
+}
+.product-cart table :where(th, td):first-child {
+    text-align: left;
+    padding-left: 15px;
+}
+.product-cart tbody td:first-child {
+    display: flex;
+    align-items: center;
+}
+.product-cart tbody .content {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    flex-wrap: wrap;
+    max-width: 100%;
+}
+.product-cart tbody td .content strong {
+    font-size: 22px;
+    font-family: 'Roboto Condensed', sans-serif;
+    margin-bottom: 15px;
+}
+.product-cart tbody td .content a {
+    color: var(--primary-color);
+}
+.product-cart tbody td .content p {
+    color: #453c5c;
+}
+.product-cart table tbody td:first-child {
+    padding-left: 0;
+}
+.product-cart tbody .price,
+.product-cart tbody .total {
+    font-size: 18px;
+    color: #453c5c;
+}
+.product-cart .control {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.product-cart .control :where(button, input) {
+    padding: 5px;
+    text-align: center;
+    outline: 0;
+    border: 0;
+    background-color: transparent;
+}
+.product-cart .control input {
+    background-color: white;
+    margin: 0 4px;
+    font-size: 16px;
+    width: 30px;
+    height: 30px;
+    border-radius: 4px;
+}
+.product-cart .control button {
+    cursor: pointer;
+    width: 25px;
+    height: 25px;
+    background-color: var(--primary-color);
+    border-radius: 4px;
+    color: white;
+}
+.product-cart table tbody tr {
+    border-bottom: 1px solid black;
+}
+.product-cart tbody .removeBtn {
+    border: 0;
+    outline: 0;
+    font-size: 20px;
+    transition: opacity 0.2s linear;
+    cursor: pointer;
+}
+.product-cart tbody .removeBtn:hover {
+    opacity: 0.5;
+}
+
+.product-cart .total-price {
+    width: 30%;
+    margin: 30px auto;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+}
+.product-cart .cost-item {
+    width: 100%;
+    font-size: 20px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.product-cart .cost-item:last-child {
+    border-top: 1px solid black;
+    font-weight: bold;
+}

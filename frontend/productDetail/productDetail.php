@@ -5,15 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- For ICON -->
-    <link rel="icon" href="/assets/homepage/logo.png">
+    <link rel="icon" href="/assignment/assets/homepage/logo.png">
     <!-- LINK CSS -->
-    <link rel="stylesheet" href="/styles/homepage/assignment/header.css">
-    <link rel="stylesheet" href="/styles/homepage/assignment/footer.css">
-    <link rel="stylesheet" href="/styles/productDetail/assignment/productDetail.css">
-    <link rel="stylesheet" href="/styles/homepage/assignment/products.css">
-    <link rel="stylesheet" href="/styles/productCart/assignment/productCart.css">
-    <link rel="stylesheet" href="/styles/reset/assignment/general.css">
-    <link rel="stylesheet" href="/styles/reset/assignment/reset.css">
+    <link rel="stylesheet" href="/assignment/styles/homepage/header.css">
+    <link rel="stylesheet" href="/assignment/styles/homepage/footer.css">
+    <link rel="stylesheet" href="/assignment/styles/productDetail/productDetail.css">
+    <link rel="stylesheet" href="/assignment/styles/homepage/products.css">
+    <link rel="stylesheet" href="/assignment/styles/productCart/productCart.css">
+    <link rel="stylesheet" href="/assignment/styles/reset/general.css">
+    <link rel="stylesheet" href="/assignment/styles/reset/reset.css">
     <!-- For SLIDER -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/> 
     <!-- For ICON -->
@@ -25,12 +25,25 @@
     <title>Detail Product</title>
 </head>
 <body>
+    <?php
+        include '../../../backend/connect.php';
+        global $product_id;
+        global $prosID;
+        if(isset($_GET['id'])){
+            $product_id = $_GET['id'];
+            $sql = $conn->prepare("SELECT * FROM productinfo WHERE ProID = '$product_id'");
+            $sql->execute();
+            $productinfo = $sql->fetch(PDO::FETCH_ASSOC);
+            $prosID = $productinfo['ProsID'];
+        }
+
+    ?>
     <!-- HEADER -->
     <header class="header">
         <div class="wrapper">
             <div class="header-top flexbox">
-                <a href="/frontend/index.html" class="logo">
-                    <img src="/assets/homepage/logo.png" alt="">
+                <a href="/assignment/frontend/index.html" class="logo">
+                    <img src="/assignment/assets/homepage/logo.png" alt="">
                     <div class="logo-text">
                         <h2 class="logo-bk">BK</h2>
                         <h4 class="logo-small">Furniture</h4>
@@ -45,7 +58,7 @@
                         </form>
                     </div>
                     <div class="searchbox-icon">
-                        <a href="/frontend/userInfo/assignment/userInf.html"><i class="ri-user-line icon-large searchbox-item"></i></a>
+                        <a href="/assignment/frontend/userInfo/assignment/userInf.html"><i class="ri-user-line icon-large searchbox-item"></i></a>
                         <div class="cart-wrapper">
                             <a href="#" class="cart-button"><i class="ri-shopping-cart-line icon-large searchbox-item"></i></a>
                             <span class="qt">0</span>
@@ -57,7 +70,7 @@
                 <a href="#" class="trigger"><i class="ri-menu-line icon-large"></i></a>
                 <div class="header-menu">
                     <ul class="menu-list flexcenter">
-                        <li><a href="#" class="current"><i class="ri-home-line icon-small"></i> Home</a></li>
+                        <li><a href="/frontend/index.php" class="current"><i class="ri-home-line icon-small"></i> Home</a></li>
                         <li><a href="#">living room</a></li>
                         <li><a href="#">dining room</a></li>
                         <li><a href="#">bath room</a></li>
@@ -81,21 +94,21 @@
                         <div class="row">
                             <div class="item">
                                 <span class="discount">
-                                    32%<br>OFF
+                                <?php echo round(((float)$productinfo['OriginPrice'] - (float)$productinfo['PriceDiscount'])/(float)$productinfo['OriginPrice']*100) . "%"; ?><br>OFF
                                 </span>
                                 <div class="big-image swiper">
                                     <div class="big-image-wrapper swiper-wrapper">
                                         <div class="image-show swiper-slide">
-                                            <a data-fslightbox href="/assets/productDetail/f1.jpg" class="picture"><img src="/assets/productDetail/f1.jpg" alt=""></a>
+                                            <a data-fslightbox href="<?php echo $productinfo['ProImg']; ?>" class="picture"><img src="<?php echo $productinfo['ProImg']; ?>" alt=""></a>
                                         </div>
                                         <div class="image-show swiper-slide">
-                                            <a data-fslightbox href="/assets/productDetail/f2.jpg"><img src="/assets/productDetail/f2.jpg" alt=""></a>
+                                            <a data-fslightbox href="<?php echo $productinfo['ProImg']; ?>"><img src="<?php echo $productinfo['ProImg']; ?>" alt=""></a>
                                         </div>
                                         <div class="image-show swiper-slide">
-                                            <a data-fslightbox href="/assets/productDetail/f3.jpg"><img src="/assets/productDetail/f3.jpg" alt=""></a>
+                                            <a data-fslightbox href="<?php echo $productinfo['ProImg']; ?>"><img src="<?php echo $productinfo['ProImg']; ?>" alt=""></a>
                                         </div>
                                         <div class="image-show swiper-slide">
-                                            <a data-fslightbox href="/assets/productDetail/f4.jpg"><img src="/assets/productDetail/f4.jpg" alt=""></a>
+                                            <a data-fslightbox href="<?php echo $productinfo['ProImg']; ?>"><img src="<?php echo $productinfo['ProImg']; ?>" alt=""></a>
                                         </div>
                                     </div>
 
@@ -107,16 +120,16 @@
                                 <div class="small-image">
                                     <ul class="small-image-wrapper swiper-wrapper">
                                         <li class="small-img swiper-slide">
-                                            <img src="/assets/productDetail/f1.jpg" alt="">
+                                            <img src="<?php echo $productinfo['ProImg']; ?>" alt="">
                                         </li>
                                         <li class="small-img swiper-slide">
-                                            <img src="/assets/productDetail/f2.jpg" alt="">
+                                            <img src="<?php echo $productinfo['ProImg']; ?>" alt="">
                                         </li>
                                         <li class="small-img swiper-slide">
-                                            <img src="/assets/productDetail/f3.jpg" alt="">
+                                            <img src="<?php echo $productinfo['ProImg']; ?>" alt="">
                                         </li>
                                         <li class="small-img swiper-slide">
-                                            <img src="/assets/productDetail/f4.jpg" alt="">
+                                            <img src="<?php echo $productinfo['ProImg']; ?>" alt="">
                                         </li>
                                     </ul>
                                 </div>
@@ -126,7 +139,7 @@
                         <div class="row">
                             <div class="item">
                                 <h1 class="product-name">
-                                    SOFA
+                                    <?php echo $productinfo['ProName']; ?>
                                 </h1>
                                 <h3 class="product-desc">
                                     Glossy Cube
@@ -134,8 +147,8 @@
                                 <div class="content">
                                     <div class="stars"></div>
                                     <div class="price">
-                                        <div class="current">80.90</div>
-                                        <div class="normal">119.90</div>
+                                        <span class="current">$<?php echo $productinfo['OriginPrice']; ?></span>
+                                        <span class="normal">$<?php echo $productinfo['PriceDiscount']; ?></span>
                                     </div>
                                     <div class="actions">
                                         <p class="title">Quantity</p>
@@ -146,7 +159,7 @@
                                         </div>
                                     </div>
                                     <div class="origin">
-                                        <span class="title">Origin: <span class="where">Germany</span></span>
+                                        <span class="title">Origin: <span class="where"><?php echo $productinfo['Origin']; ?></span></span>
                                     </div>
                                     <div class="button-cart">
                                         <div class="wrap-button">
@@ -178,20 +191,9 @@
                                     <div class="description collapse">
                                         <ul>
                                             <li class="has-child">
-                                                <a href="#" class="icon-small">Information</a>
-                                                <ul class="content">
-                                                    <li><span>Manufacture</span> <span>2022</span></li>
-                                                    <li><span>Weight</span> <span>10kg</span></li>
-                                                    <li><span>Material</span> <span>Wood</span></li>
-                                                    <li><span>Warranty</span> <span>24 months</span></li>
-                                                </ul>
-                                            </li>
-
-                                            <li class="has-child">
                                                 <a href="#" class="icon-small">Description</a>
                                                 <div class="content">
-                                                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatum illo assumenda consequatur quae voluptatibus atque!</p>
-                                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga optio sint excepturi cupiditate. Magni saepe corrupti velit blanditiis, impedit quae quod veniam fuga ad fugiat!</p>
+                                                    <p><?php echo $productinfo['ProDes']; ?></p>
                                                 </div>
                                             </li>
 
@@ -321,11 +323,22 @@
                 </div>
 
                 <div class="product main flexwrap">
+                    <?php
+                        include '../../../backend/connect.php';
+                        $a=1;
+                        $stmt = $conn->prepare(
+                                "SELECT * FROM productinfo WHERE ProsID = $prosID AND ProID <> $product_id");
+                        $stmt->execute();
+                        $productinfos = $stmt->fetchAll();
+                        foreach($productinfos as $productinfo)
+                        {
+                            
+                    ?>
                     <div class="item">
                         <div class="media">
                             <div class="thumbnail object-cover">
                                 <a href="#">
-                                    <img src="/assets/homepage/featured/f6.jpg" alt="">
+                                    <img src="<?php echo $productinfo['ProImg']; ?>" alt="">
                                 </a>
                             </div>
                             <div class="hoverable">
@@ -336,7 +349,7 @@
                                 </ul>
                             </div>
                             <div class="discount flexcenter">
-                                <span>31%</span>
+                                <span><?php echo round(((float)$productinfo['OriginPrice'] - (float)$productinfo['PriceDiscount'])/(float)$productinfo['OriginPrice']*100) . "%"; ?></span>
                             </div>
                         </div>
                         <div class="product-content">
@@ -344,14 +357,17 @@
                                 <div class="stars"></div>
                                 <span>(2,548)</span>
                             </div>
-                            <h3 class="main-links"><a href="#">Black Women's Coat Dress</a></h3>
+                            <h3 class="main-links"><a href="#"><?php echo $productinfo['ProName']; ?></a></h3>
                             <span class="free-ship">Top Sell Of Week</span>
                             <div class="price">
-                                <span class="current">$359.99</span>
-                                <span class="normal">$400.00</span>
+                                <span class="current">$<?php echo $productinfo['OriginPrice']; ?></span>
+                                <span class="normal">$<?php echo $productinfo['PriceDiscount']; ?></span>
                             </div>
                         </div>
                     </div>
+                    <?php
+                    }
+                    ?>
                 </div>
             </div>
         </div>
@@ -398,7 +414,8 @@
     
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fslightbox/3.4.1/index.js"></script>
-    <script src="/scripts/cart/assignment/cart.js"></script>
-    <script src="/scripts/general/assignment/general.js"></script>
+    <script src="/scripts/anotherPage.js"></script>
+    <script src="/assignment/scripts/cart/cart.js"></script>
+    <script src="/assignment/scripts/general/general.js"></script>
 </body>
 </html>
