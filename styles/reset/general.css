@@ -1,0 +1,45 @@
+:root {
+    --primary-color: #1264A9;
+    --hover-color: #453c5c;
+    --icon-color: #212427;
+    --border-color: #e5e8ec;
+}
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 30px;
+}
+.column {
+    margin-left: -20px;
+    margin-right: 20pxem;
+}
+.column .row {
+    padding: 0 20px;
+}
+.flexbox {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.flexcol {
+    display: flex;
+    align-items: center;
+}
+.flexrow {
+    display: flex;
+    justify-content: space-between;
+}
+.flexcenter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.flexwrap {
+    display: flex;
+    flex-wrap: wrap;
+}
+.object-cover {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}

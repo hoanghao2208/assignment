@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- For ICON -->
+    <link rel="icon" href="/assets/homepage/logo.png">
+    <!-- LINK CSS -->
+    <link rel="stylesheet" href="/styles/homepage/header.css">
+    <link rel="stylesheet" href="/styles/homepage/footer.css">
+    <link rel="stylesheet" href="/styles/admin/listOrder.css">
+    <link rel="stylesheet" href="/styles/reset/reset.css">
+    <link rel="stylesheet" href="/styles/reset/general.css">
+    <!-- For ICON -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <!-- For FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet">
+    <title>List Your Orders</title>
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="wrapper">
+            <div class="header-top flexbox">
+                <a href="/frontend/index.html" class="logo">
+                    <img src="/assets/homepage/logo.png" alt="">
+                    <div class="logo-text">
+                        <h2 class="logo-bk">BK</h2>
+                        <h4 class="logo-small">Furniture</h4>
+                    </div>
+                </a>
+                <div class="searchbox flexbox">
+                    <div class="searchbox-form">
+                        <form action="" class="search flexcol">
+                            <span class="icon-small"><i class="ri-search-line"></i></span>
+                            <input type="search" placeholder="Search for products, brands, ...">
+                            <button type="submit">Search</button>
+                        </form>
+                    </div>
+                    <div class="searchbox-icon">
+                        <a href="/frontend/userInfo/assignment/userInf.html"><i class="ri-user-line icon-large searchbox-item"></i></a>
+                        <div class="cart-wrapper">
+                            <a href="#" class="cart-button"><i class="ri-shopping-cart-line icon-large searchbox-item"></i></a>
+                            <span class="qt">0</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="header-bottom">
+                <a href="#" class="trigger"><i class="ri-menu-line icon-large"></i></a>
+                <div class="header-menu">
+                    <ul class="menu-list flexcenter">
+                        <li><a href="#" class="current"><i class="ri-home-line icon-small"></i> Home</a></li>
+                        <li><a href="#">living room</a></li>
+                        <li><a href="#">dining room</a></li>
+                        <li><a href="#">bath room</a></li>
+                        <li><a href="#">bedroom</a></li>
+                        <li class="on-mobile"><a href="#">your information</a></li>
+                        <a href="#" class="close"><i class="ri-close-line"></i></a>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main"> 
+        <div class="list-items">
+            <div class="item">
+                <div class="asset mobile-hide">
+                    <img src="/assets/productDetail/f1.jpg" alt="" class="product-img">
+                </div>
+                <div class="wrap-content">
+                    <p class="product-name">Product Name</p>
+                    <div class="count">
+                        <span class="text">Value:</span>
+                        <span class="value"> 4</span>
+                    </div>
+                    <div class="cost">
+                        <span class="text">Total price:</span>
+                        <span class="price">$500</span>
+                    </div>
+                </div>
+                <div class="progress">
+                    <span class="in-progress"><i class="ri-checkbox-blank-circle-fill"></i> In Progress</span>
+                </div>
+            </div>
+            <div class="item">
+                <div class="asset mobile-hide">
+                    <img src="/assets/productDetail/f1.jpg" alt="" class="product-img">
+                </div>
+                <div class="wrap-content">
+                    <p class="product-name">Product Name</p>
+                    <div class="count">
+                        <span class="text">Value:</span>
+                        <span class="value"> 4</span>
+                    </div>
+                    <div class="cost">
+                        <span class="text">Total price:</span>
+                        <span class="price">$500</span>
+                    </div>
+                </div>
+                <div class="progress">
+                    <span class="completed"><i class="ri-checkbox-blank-circle-fill"></i> Completed</span>
+                </div>
+            </div>
+            <div class="item">
+                <div class="asset mobile-hide">
+                    <img src="/assets/productDetail/f1.jpg" alt="" class="product-img">
+                </div>
+                <div class="wrap-content">
+                    <p class="product-name">Product Name</p>
+                    <div class="count">
+                        <span class="text">Value:</span>
+                        <span class="value"> 4</span>
+                    </div>
+                    <div class="cost">
+                        <span class="text">Total price:</span>
+                        <span class="price">$500</span>
+                    </div>
+                </div>
+                <div class="progress">
+                    <span class="canceled"><i class="ri-checkbox-blank-circle-fill"></i> Canceled</span>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="wrapper wrap-footer flexrow">
+            <div class="left">
+                <div class="contact">
+                    <h2>Contact us</h2>
+                    <h4><i class="ri-phone-line icon-small icon"></i> 0123456789</h4>
+                    <h4><i class="ri-mail-line icon-small icon"></i> bkfurniture@gmail.com</h4>
+                </div>
+                <div class="visit">
+                    <h2>Visit our store</h2>
+                    <h4><i class="ri-map-pin-line icon-small icon"></i>246 Ly Thuong Kiet, Quan 10, Ho Chi Minh City, Viet Nam</h4>
+                    <h4 class="timer">
+                        <i class="ri-time-line icon-small icon"></i>
+                        <div class="time">
+                            <span>Mon-Fri: 10am to 6pm</span>
+                            <span>Sat-Sun: 11am to 5pm</span>
+                        </div>
+                    </h4>
+                </div>
+            </div>
+            <div class="right">
+                <div class="email">
+                    <h2>FILL EMAIL FOR DEALS OR YOUR DESIGN</h2>
+                    <form action="" class="enterEmail">
+                        <input type="email" placeholder="Email Address">
+                    </form>
+                </div>
+                <div class="connect">
+                    <h2>Connect with us</h2>
+                    <a href="https://www.facebook.com/"><i class="ri-facebook-circle-fill icon large-icon"></i></a>
+                    <a href="https://www.instagram.com/"><i class="ri-instagram-line icon large-icon"></i></a>
+                    <a href="https://twitter.com/?lang=vi"><i class="ri-twitter-fill icon large-icon"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/scripts/newAdd/newAdd.js"></script>
+</body>
+</html>

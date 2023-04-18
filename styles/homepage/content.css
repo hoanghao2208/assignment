@@ -1,0 +1,276 @@
+.main {
+    background-color: #f8f6f6;
+    padding-bottom: 80px;
+}
+.main .slider {
+    margin-bottom: 80px;
+}
+.swiper,
+.main .slider .image {
+    height: 600px;
+    width: 100%;
+}
+.main .swiper-slide {
+    position: relative;
+}
+.slick-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 100;
+    background-color: transparent;
+    border:0;
+    padding: 0 20px;
+    font-size: 30px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+.slick-prev {
+    left: 0;
+}
+.slick-next {
+    right: 0;
+}
+.main .slider .text-content {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    padding: 0 0 10% 10%;
+}
+.main .slider h4 {
+    font-size: 18px;
+    font-weight: 700;
+    width: fit-content;
+    background-color: #0a021c;
+    color: white;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 10px;
+}
+.main .slider h2 span:first-child {
+    font-family: 'Poppins', sans-serif;
+    font-size: 50px;
+    font-weight: 300;
+    line-height: 1.4;
+    background: linear-gradient(90deg, #000046 0%, #1CB5E0 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+.main .slider h2 span:last-child {
+    font-family: 'Poppins', sans-serif;
+    font-size: 50px;
+    font-weight: 800;
+    line-height: 1.4;
+    text-transform: uppercase;
+    background: linear-gradient(90deg, #11998e 0%, #38ef7d 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+.main .slider a.primary-button {
+    font-family: 'Poppins', sans-serif;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 0.9em 2em;
+    height: auto;
+    width: fit-content;
+    border-radius: 2em;
+    background-color: #ff6b6b;
+    color: white;
+    margin-top: 30px;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease-in-out;
+}
+.main .slider a.primary-button:hover {
+    background-color: var(--hover-color);
+}
+/* ROOM TYPE */
+.main .wrap-all {
+    background-color: white;
+    border-radius: 20px;
+    margin: 0 50px;
+}
+.main .room-type .title {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-align: center;
+    line-height: 1.6;
+}
+.main .room-type .desc {
+    font-size: 20px;
+    font-weight: 400;
+    text-align: center;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+.main .room-type .room-item {
+    width: calc(33.33% - 30px);
+}
+.main .room-type .room-item img {
+    height: 450px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+.main .room-item .item-desc {
+    text-align: center;
+    font-size: 24px;
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+
+/* RESPONSIVE */
+@media screen and (max-width: 1024px) {
+    .main {
+        padding-bottom: 50px;
+    }
+    .swiper,
+    .main .slider .image {
+        height: 550px;
+    }
+    .main .slider h4 {
+        font-size: 16px;
+        margin-bottom: 8px;
+    }
+    .main .room-type .room-item img {
+        height: 400px;
+    }
+    .main .slider h2 span:first-child,
+    .main .slider h2 span:last-child {
+        font-size: 44px;
+        line-height: 1.3;
+    }
+    .main .slider a.primary-button {
+        margin-top: 15px;
+        font-size: 14px;
+        padding: 0.8em 1.8em;
+    }
+    .main .room-type .title {
+        font-size: 28px;
+    }
+    .main .room-type .desc {
+        font-size: 18px;
+    }
+    .main .room-item .item-desc {
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 820px) {
+    .swiper,
+    .main .slider .image {
+        height: 450px;
+    }
+    .main .slider {
+        margin-bottom: 50px;
+    }
+    .main .slider h4 {
+        font-size: 14px;
+        margin-bottom: 8px;
+    }
+    .main .slider h2 span:first-child,
+    .main .slider h2 span:last-child {
+        font-size: 36px;
+        line-height: 1.3;
+    }
+    .main .room-type .room-item img {
+        height: 300px;
+    }
+    .main .slider a.primary-button {
+        margin-top: 10px;
+        font-size: 14px;
+        padding: 0.6em 1.6em;
+    }
+    .main .room-type .title {
+        font-size: 24px;
+    }
+    .main .room-type .desc {
+        font-size: 13px;
+    }
+    .main .room-item .item-desc {
+        font-size: 17px;
+    }
+    .main .room-type .room-item {
+        width: calc(33.33% - 20px);
+    }
+}
+@media screen and (max-width: 768px) {
+    .swiper,
+    .main .slider .image {
+        height: 400px;
+    }
+    .main .slider {
+        margin-bottom: 40px;
+    }
+    .main .slider h2 span:first-child,
+    .main .slider h2 span:last-child {
+        font-size: 32px;
+        line-height: 1.3;
+    }
+    .main .slider a.primary-button {
+        margin-top: 8px;
+        font-size: 13px;
+        padding: 0.5em 1.5em;
+    }
+    .main .room-type .room-item img {
+        height: 260px;
+    }
+    .main .room-type .title {
+        font-size: 20px;
+    }
+    .main .room-type .desc {
+        font-size: 12px;
+    }
+    .main .room-item .item-desc {
+        font-size: 15px;
+    }
+    .main .room-type .room-item {
+        width: calc(33.33% - 20px);
+    }
+}
+@media screen and (max-width: 600px) {
+    .swiper,
+    .main .slider .image {
+        height: 320px;
+    }
+    .main .slider h4 {
+        padding: 2px 7px;
+        font-size: 12px;
+        margin-bottom: 4px;
+    }
+    .main .slider h2 span:first-child,
+    .main .slider h2 span:last-child {
+        font-size: 24px;
+        line-height: 1.3;
+    }
+    .main .slider a.primary-button {
+        margin-top: 8px;
+        font-size: 11px;
+        padding: 0.3em 1.3em;
+    }
+    .main .room-type .room-item img {
+        height: 400px;
+    }
+    .main .room-items {
+        flex-direction: column;
+    }
+    .main .room-items .room-item {
+        width: 100%;
+    }
+    .wrapper {
+        padding: 10px 25px;
+    }
+    .main .room-type .room-item img,
+    .main .room-item .item-desc,
+    .main .room-type .title{
+        margin-bottom: 10px;
+    }
+    .slick-arrow {
+        font-size: 18px;
+    }
+}
